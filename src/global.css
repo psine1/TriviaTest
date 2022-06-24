@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+* {
+  font-family: "Roboto", "Roboto", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+*, ::after, ::before {
+  box-sizing: border-box;
+
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #393E46;
+  background-color: #F5F5F5; }
+  body > header {
+    flex-grow: 0; }
+  body main {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+    justify-content: flex-start; }
+  body > footer {
+    flex-grow: 0; }
+
+.container {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: unset; }
+  @media screen and (min-width: 768px) and (max-width: 1087px) 
+  {
+    .container {
+      max-width: 768px; } 
+
+      
+      .app-trivia{
+        width: 85%;
+      }
+    
+    }
+
+    @media screen and (min-width: 627px) 
+    {
+      .container {
+        max-width: 627px; } 
+  
+        
+        .app-trivia{
+          width: 85%;
+        }
+      
+      }
+
+
+  @media screen and (min-width: 1088px) {
+    .container {
+      max-width: 1088px; } }
+
+
+      
+.app-trivia {
+  background-color: #ffffff;
+  color: #000000;
+  max-width: 740px;
+  border-radius: 40px;
+  padding: 20px;
+  background: linear-gradient(168.53deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 97.46%);
+  box-shadow: 0px 0px 30px rgba(84, 81, 214, 0.1);
+  backdrop-filter: blur(20px);
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* PREGUNTAS */
+.top-question {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wrap-texts{
+  width: 50%;
+}
+
+
+
+.pregunta-numero {
+  margin-bottom: 20px;
+}
+
+.pregunta-numero span {
+  font-size: 28px;
+}
+
+.question-title {
+  font-size: 1.5rem;
+  font-weight: 700;  
+  color: #333333;
+  padding-right: 1rem;
+}
+
+.badge {
+  background-color: #86A44C;
+  padding: 0.5rem;
+  position: relative;
+  display: inline-block;
+  border-radius: 3rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0.6rem 1.5rem 0.6rem 1.5rem; 
+  margin-bottom: 1.5rem;;
+}  
+
+.badge-mobile{
+  display: none;
+}
+
+.bottom-question {
+  width:100%;
+  height:auto;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: center;
+/*  padding: 1rem; */
+}
+
+.btn-answer{
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #8681CB;  
+  color: #333333;
+  cursor: pointer;
+  font-size: 18px;
+ /*  margin: 1rem; */
+}
+
+.btn-answer:hover {
+  background-color: #A5A1DE;
+}
+
+.answer-btn{
+  background-color: #A5A1DE;
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.answer-btn:hover {
+  background-color: #8681CB;
+}
+
+.wrap-img{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.img-dyn{  
+  overflow: hidden;
+
+}
+
+.wrap-img img{
+  width: 100%;
+  border-radius: 15px;
+
+}
+
+
+
+/* FINALIZADO */
+.juego-terminado {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 24px;
+  align-items: center;
+}
+
+/* GRAL */
+button {
+/*  width: 100%; */
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #252d4a;
+  border: 1px solid #234668;
+  cursor: pointer;
+}
+
+.tiempo-restante {
+  font-size: 14px;
+  color: #fcbf3d;
+  margin-bottom: 20px;
+}
+
+.correct,
+.correct:hover {
+  background-color: #2f922f;
+}
+
+.incorrect,
+.incorrect:hover {
+  background-color: #ff3333;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button:hover {
+  background-color: #234668;
+}
+
+button[disabled] {
+  background-color: #555e7d;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+button:focus {
+  outline: none;
+}
+
+button svg {
+  margin-right: 5px;
+}
+
+
+
+/* Answer */
+
+.title-explanation{
+  font-size: 18px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.explanation{
+  font-size: 14px;
+  font-weight: 400;
+  color: #777777;
+}
+
+.m-b{
+  margin-bottom: 2rem;
+}
+
+.m-t{
+  margin-top: 2rem;
+}
+
+
+/**
+
+
+
+
+/* Grid */
+
+.column {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding: 10px;
+}
+
+.rw {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+
+
+.col-6 {
+  flex: 0 1 50%;
+}
+
+
+
+.col-12 {
+  max-width: 100%;
+  flex: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+.display-none{
+  display: none;
+}
+
+.display-block{
+  display: block;
+}
+
+
+
+@media (max-width: 575.98px) {
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .column-12-sm {
+    max-width: 100%;
+    flex: 100%;
+  }
+
+  .app-trivia{
+    width: 85%;
+  }
+
+  .top-question{
+    flex-direction: column;
+  }
+
+  .wrap-texts{
+    width: 100%;
+  }
+
+  .question-title{
+    font-size: 18px;
+    text-align: center;
+  }
+  .badge{
+    display: none;
+  }
+
+  .badge-mobile{
+    display: block;
+    background-color: #86A44C;
+    padding: 0.5rem;
+    position: absolute;
+    display: inline-block;
+    border-radius: 3rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 0.6rem 1.5rem 0.6rem 1.5rem; 
+    margin-bottom: 1.5rem;
+    right: 2rem;
+    bottom: 1rem;  
+
+  }
+
+  .wrap-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+.btn-answer{
+  font-size: 16px;
+}
+
+  .bottom-question {
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  /*  padding: 1rem; */
+  }
+
+  .col-6 {
+    max-width: 100%;
+    flex: 100%;
+  }
+
+
+}

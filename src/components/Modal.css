@@ -1,0 +1,37 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999999;
+  }
+  
+  .modal-main {
+    position:fixed;
+    background: white;
+    width: 80%;
+    height: auto;
+  }
+  
+  .display-block {
+    display: block;
+  }
+  
+  .display-none {
+    display: none;
+  }
+
+
+  .signUp-btn{
+    background-color: #A5A1DE;
+    color: #ffffff;
+    padding: 0.8rem;
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+  
+  .signUp-btn:hover {
+    background-color: #8681CB;
+  }

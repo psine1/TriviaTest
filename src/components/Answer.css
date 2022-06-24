@@ -1,0 +1,27 @@
+.title-explanation{
+    font-size: 18px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.explanation, .sources{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #777777;
+}
+
+.sources{
+margin-top: 0.5rem;
+}
+
+.sources a{
+    text-decoration: none;
+    color: #777777;
+    }
+
+    .wrap-bar{
+        margin-top: 2rem;
+    }    
