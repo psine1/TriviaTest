@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Header from './components/Header';
 import App from './App';
+import MoreQuestions from './components/MoreQuestions';
+import Footer from './components/Footer';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -15,7 +17,9 @@ root.render(
     <>    
     <Header />
     <App />
-    
+    <MoreQuestions />
+    <Footer />
+
     </>
 
 

@@ -38,14 +38,14 @@ function App() {
                 // change next question
                 setTimeout(() => {
 
-                  
+/*                  
                   if (currentQuestion === data.length - 1) {
                 //   setIsFinished(true);
                   } 
                   else {
                 //    setCurrentQuestion(currentQuestion + 1);
                   }
-                  
+*/                  
 
                 }, 500)
         }
@@ -73,14 +73,9 @@ function App() {
         if (isFinished) return (
           <main className="app-trivia container">
             <div className="juego-terminado">
-              <span> Obtuviste {score} de {data.length} {""} </span>
-              <button onClick={() => (window.location.href="/")}>{""}Volver a Jugar</button>
-              <button onClick={() => {
-                setIsFinished(false);
-                setAnswerShown(true);
-                setCurrentQuestion(0);
+              <span> Score  {score} out of {data.length} {""} </span>
+              <button onClick={() => (window.location.href="/")}>{""}Play Again</button>
 
-              }}>ver respuestas</button>
             </div>
 
           </main>
@@ -89,13 +84,7 @@ function App() {
         if (answerShown)
           return (<main className="app-trivia container">
             
-              <div className="top-question column">
-                  { /*
-                    <div className="numero-pregunta">
-                      <span>pregunta {currentQuestion + 1} de </span> {data.length}
-                    </div>
-                    */
-                  }                    
+              <div className="top-question column">               
                     
                     <div className="question-title">
                       {data[currentQuestion].text}
@@ -112,7 +101,7 @@ function App() {
                                   setCurrentQuestion(currentQuestion + 1);
                                 }
                     }}>
-                      {currentQuestion === data.length - 1 ? "volver a jugar" : "siguiente"}
+                      {currentQuestion === data.length - 1 ? "Play Again" : "Next"}
                     </button>
                   
               </div>
@@ -122,62 +111,43 @@ function App() {
         return (
           <main className="container">  
             <div className="app-trivia container">    
-              <div className="top-question column">
-                  <div className="wrap-texts column">
-                          <div className="badge">
-                            {data[currentQuestion].category}
-                          </div>                      
-                          <div className="question-title">
-                            {data[currentQuestion].text}
-                          </div>    
-
-                  { /*
-                    <div className="numero-pregunta">
-                      <span>pregunta {currentQuestion + 1} de </span> {data.length}
-                    </div>
-                    */
-                  }                                 
-                  </div>
-                  <div className="wrap-img column">
-                        <div className="img-dyn">
-                          <img src={data[currentQuestion].imageURL} />                          
+                    <div className="top-question column">
+                        <div className="wrap-texts column">
+                            <div className="badge">
+                              {data[currentQuestion].category}
+                            </div>                      
+                            <div className="question-title">
+                              {data[currentQuestion].text}
+                            </div>                                  
                         </div>
-                        <div className="badge-mobile">{data[currentQuestion].category}</div>                        
-                </div>         
-              </div>
+                        <div className="wrap-img column">
+                              <div className="img-dyn">
+                                   <img src={data[currentQuestion].imageURL} />                          
+                              </div>
+                              <div className="badge-mobile">{data[currentQuestion].category}</div>                        
+                       </div>         
+                    </div>
 
-              <div className="bottom-question">            
-                    {data[currentQuestion].choices.map((data) => (
-                      <div className="column col-6 col-12-sm" key={data.textQuestion}>
-                          <div className="btn-answer col-6 col-12-sm" disabled={areDisabled}  onClick={(e) => handleAnswerSubmit(data.isCorrect, e)}>
-                            {data.textQuestion}
-                          </div>
-                      </div>  
-                    ))}   
-                    
-
-
-                      <div className="column col-12">
-                            
-                            {!showComponent && btn_answer}
-                            {showComponent && btn_next }
-
-                            
-                      </div>    
-                                                 
-              </div>        
-
-
+                    <div className="bottom-question">            
+                          {data[currentQuestion].choices.map((data) => (
+                            <div className="column col-6 col-12-sm" key={data.textQuestion}>
+                                <div className="btn-answer col-6 col-12-sm" disabled={areDisabled}  onClick={(e) => handleAnswerSubmit(data.isCorrect, e)}>
+                                  {data.textQuestion}
+                                </div>
+                            </div>  
+                          ))}   
+                          
+                            <div className="column col-12">                                  
+                                  {!showComponent && btn_answer}
+                                  {showComponent && btn_next }                                  
+                            </div>                                                          
+                    </div>        
               </div>  
 
-
-                
                 <div className={showComponent ? "show-element" : null}>
                   {showComponent && <Answer info={info }/> }
                 </div>
-                
-               
-                                            
+                        
           </main>
 
 

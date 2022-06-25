@@ -1,18 +1,26 @@
 .modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-    height: 100%;
+      top: 0;
+      left: 0;
+    width:100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.6);
     z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .modal-main {
-    position:fixed;
     background: white;
-    width: 80%;
+    width: 450px;
     height: auto;
+    border-radius: 30px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
   }
   
   .display-block {
@@ -24,14 +32,106 @@
   }
 
 
+.wrap-modal{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.close-btn  {
+  color: #8681CB;
+  padding: 10px 30px 10px 30px;
+  font-size: 16px;
+  margin-bottom: 0rem;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
   .signUp-btn{
-    background-color: #A5A1DE;
-    color: #ffffff;
-    padding: 0.8rem;
-    font-size: 20px;
-    margin-bottom: 1rem;
+    background-color: transparent; 
+    color: #8681CB;
+    padding: 10px 30px 10px 30px;
+    font-size: 16px;
+    margin-bottom: 0rem;
+    border-radius: 8px;
+    border: 2px solid #8681CB;
+    margin: 10px;
+   /* align-self: flex-end; */
+
   }
-  
+
+
   .signUp-btn:hover {
     background-color: #8681CB;
+    color: #ffffff;
+
+  }
+
+  .send-btn  {
+    background-color: transparent; 
+    color: #8681CB;
+    padding: 10px 30px 10px 30px;
+    font-size: 16px;
+    margin-bottom: 0rem;
+    border-radius: 8px;
+    border: 2px solid #8681CB;
+  }  
+
+  .send-btn:hover {
+    background-color: #8681CB;
+    color: #ffffff;
+
+  }  
+
+
+  .modal-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;;
+  }
+
+
+  .tittle-modal{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+
+  .icon-check{
+    width: 67px;
+  }
+
+  .icon-check img{
+      width: 100%;
+  }
+
+
+  .input{
+    background: #FFFFFF;
+    border: 1px solid #8A84D2;
+    border-radius: 8px;
+    width: 80%;
+    height: 50px;
+  }
+
+
+
+  @media (max-width: 575.98px) {
+
+    .modal-main {
+      background: white;
+      width: 90%;
+      height: auto;
+      border-radius: 30px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+    }
+
   }

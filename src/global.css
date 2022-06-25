@@ -34,6 +34,10 @@ body {
   body > footer {
     flex-grow: 0; }
 
+h3{
+  font-size: 18px;
+}
+
 .container {
   display: block;
   position: relative;
@@ -71,6 +75,10 @@ body {
       max-width: 1088px; } }
 
 
+      .tittles{
+        font-size: 24px;
+        font-weight: 700;
+      }
       
 .app-trivia {
   background-color: #ffffff;
@@ -269,11 +277,11 @@ button svg {
 }
 
 .m-b{
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .m-t{
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 
