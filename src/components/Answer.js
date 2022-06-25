@@ -13,9 +13,7 @@ function Answer({info}) {
   var summed = 0;
   for (var key in TotalPeople) {
       summed += TotalPeople[key];
-      console.log(TotalPeople[key]);
   };
-  console.log(TotalPeople.B);
 
 
   const testData = [
