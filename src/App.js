@@ -81,7 +81,7 @@ function App() {
         return (
           <main className="container">  
             <div className="app-trivia container">    
-                    <div className="top-question column">
+                    <div className="question-header column">
                         <div className="wrap-texts column">
                             <div className="badge">
                               {data[currentQuestion].category}
@@ -98,7 +98,7 @@ function App() {
                        </div>         
                     </div>
 
-                    <div className="bottom-question">            
+                    <div className="question-wraper">            
                           {data[currentQuestion].choices.map((data) => (
                             <div className="column col-6 col-12-sm" key={data.textQuestion}>
                                 <div className="btn-answer col-6 col-12-sm animbtn" disabled={areDisabled}  onClick={(e) => handleAnswerSubmit(data.isCorrect, e)}>
