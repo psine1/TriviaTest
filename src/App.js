@@ -13,6 +13,7 @@ function App() {
         const [areDisabled, setAreDisabled] = useState(true);
         const [showComponent, setShowComponent] = useState(false);
 
+
         const btn_answer = <button className="btn-answer answer-btn" disabled={areDisabled} onClick={() => (viewAnswers()) }>Answer</button>  ;
         const btn_next = <button className="btn-answer answer-btn" disabled={areDisabled} onClick={() => changeQuestion()}>Next Question</button>  ;
 
@@ -34,6 +35,12 @@ function App() {
                 if (isCorrect) setScore(score +1)
                 // add styles question
                 e.target.classList.add(isCorrect ? "correct" : "incorrect");
+
+                setTimeout(function(){
+                  gsap.set(".animbtn", {pointerEvents: "none"}, 0)
+              }, 100);
+
+
         }
 
 
