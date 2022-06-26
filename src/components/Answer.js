@@ -4,6 +4,7 @@ import "./Answer";
 //import{useState, useEffect} from "react";
 import './Answer.css';
 import ProgressBar from './ProgressBar';
+import { gsap } from "gsap";
 
 
 
@@ -27,12 +28,13 @@ function Answer({info}) {
 
     const textsQuestions = info.textQuestions;
 
-    
+      gsap.fromTo(".animAnswer", {autoAlpha: 0}, {duration: 3, scale: 1, autoAlpha: 1, ease: "power3.out"}, 0)
+
 
     return (
         
 
-      <div className="container app-trivia m-b">
+      <div className="container app-trivia m-b animAnswer">
       <div className="column">
           <h3 className="title-explanation">Learn More!</h3>
           <p className="explanation">{info.textCorrectExplanation}</p>

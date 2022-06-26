@@ -35,16 +35,15 @@ function App() {
                 // add styles question
                 e.target.classList.add(isCorrect ? "correct" : "incorrect");
 
-                setTimeout(function(){
-                  gsap.set(".animbtn", {pointerEvents: "none"}, 0)
-              }, 100);
+                gsap.set(".animbtn", {pointerEvents: "none"}, 0)
 
 
         }
 
 
       function viewAnswers (e){
-          setShowComponent(!showComponent)               
+          setShowComponent(!showComponent)  
+          animAnswer();      
       }
 
       function changeQuestion (){
@@ -58,7 +57,12 @@ function App() {
         }
 
         setShowComponent(!showComponent)
-        anim();
+
+        setTimeout(function(){
+          anim()
+      }, 0);
+
+      //  anim();
       }      
 
 
@@ -66,10 +70,18 @@ function App() {
         let tl_ = gsap.timeline();
         tl_                
         .fromTo(".img-dyn img", {autoAlpha: 0}, {duration: 3, scale: 1, autoAlpha: 1, ease: "power3.out"}, 0)
-        .fromTo(".animbtn", {autoAlpha: 0}, {duration: 3, scale: 1, autoAlpha: 1, ease: "power3.out"}, 0)
+        .from(".animbtn", {duration: 0.5, scale: 0.5, autoAlpha: 0, stagger: 0.2, ease: "power3.out"}, 0)
 
-          return tl_;
+          return tl_;          
       }
+
+      function animAnswer (){
+        let tl_ = gsap.timeline();
+        tl_                
+        .fromTo(".animAnswer", {autoAlpha: 0}, {duration: 3, scale: 1, autoAlpha: 1, ease: "power3.out"}, 0)
+
+          return tl_;          
+      }      
 
 
 
