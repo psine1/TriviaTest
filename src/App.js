@@ -1,5 +1,4 @@
 import data from "./data";
-import './App.css';
 import{useState, useEffect} from "react";
 import Answer from './components/Answer';
 import { gsap } from "gsap";

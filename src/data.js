@@ -54,8 +54,8 @@ const data = [
     text: "Who is the squire of Don Quixote in the eponymous novel?",
     choices: [
       { textQuestion: "Diego de la Vega", isCorrect: false },
-      { textQuestion: "Sancho Panza", isCorrect: false },
-      { textQuestion: "Don Juan", isCorrect: true },
+      { textQuestion: "Sancho Panza", isCorrect: true },
+      { textQuestion: "Don Juan", isCorrect: false },
       { textQuestion: "Alonso Quijano", isCorrect: false },
     ],
     correctChoice: "B",
@@ -79,8 +79,8 @@ const data = [
     text: "Which vitamin is also known as the sunshine vitamin?",
     choices: [
       { textQuestion: "Vitamin A", isCorrect: false },
-      { textQuestion: "Vitamin D", isCorrect: false },
-      { textQuestion: "Vitamin E", isCorrect: true },
+      { textQuestion: "Vitamin D", isCorrect: true },
+      { textQuestion: "Vitamin E", isCorrect: false },
       { textQuestion: "Vitamin F", isCorrect: false },
     ],
     correctChoice: "B",
@@ -104,8 +104,8 @@ const data = [
     text: "What is the main element in the Sun?",
     choices: [
       { textQuestion: "Helium", isCorrect: false },
-      { textQuestion: "Hydrogen", isCorrect: false },
-      { textQuestion: "Chlorine", isCorrect: true },
+      { textQuestion: "Hydrogen", isCorrect: true },
+      { textQuestion: "Chlorine", isCorrect: false },
       { textQuestion: "Copper", isCorrect: false },
     ],
     correctChoice: "B",
