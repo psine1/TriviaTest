@@ -48,13 +48,12 @@ h3{
   @media screen and (min-width: 768px) and (max-width: 1087px) 
   {
     .container {
-      max-width: 768px; } 
+      max-width: 768px;
+     } 
 
-      
       .app-trivia{
         width: 85%;
-      }
-    
+      }    
     }
 
     @media screen and (min-width: 627px) 
@@ -95,7 +94,6 @@ h3{
   justify-content: space-evenly;
 }
 
-/* PREGUNTAS */
 .top-question {
   width: 100%;
   position: relative;
@@ -150,7 +148,6 @@ h3{
   flex-direction:row;
   justify-content: flex-start;
   align-items: center;
-/*  padding: 1rem; */
 }
 
 .btn-answer{
@@ -165,7 +162,6 @@ h3{
   color: #333333;
   cursor: pointer;
   font-size: 18px;
- /*  margin: 1rem; */
 }
 
 .btn-answer:hover {
@@ -187,16 +183,19 @@ h3{
   width: 100%;
   display: flex;
   justify-content: center;
+  border-radius: 15px;   
 }
 
 .img-dyn{  
   overflow: hidden;
-
+  border-radius: 15px;
 }
 
 .wrap-img img{
   width: 100%;
-  border-radius: 15px;
+  border-radius: 15px; 
+  object-fit: cover;
+
 
 }
 
@@ -284,13 +283,6 @@ button svg {
   margin-top: 1.5rem;
 }
 
-
-/**
-
-
-
-
-/* Grid */
 
 .column {
   flex-basis: 0;
@@ -398,7 +390,6 @@ button svg {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-  /*  padding: 1rem; */
   }
 
   .col-6 {

@@ -2,22 +2,22 @@ import data from "./data";
 import './App.css';
 import{useState, useEffect} from "react";
 import Answer from './components/Answer';
+import { gsap } from "gsap";
+
 
 function App() {
 
         const [currentQuestion, setCurrentQuestion] = useState(0);
         const [score, setScore] = useState(0);
         const [isFinished, setIsFinished] = useState(false);
-        //const [timeLeft, setTimeLeft] = useState(10);
         const [areDisabled, setAreDisabled] = useState(true);
-        const [answerShown, setAnswerShown] = useState(false);
         const [showComponent, setShowComponent] = useState(false);
 
         const btn_answer = <button className="btn-answer answer-btn" disabled={areDisabled} onClick={() => (viewAnswers()) }>Answer</button>  ;
         const btn_next = <button className="btn-answer answer-btn" disabled={areDisabled} onClick={() => changeQuestion()}>Next Question</button>  ;
 
 
-/* envio de info por props */ 
+/* send info props */ 
       const info = {
                     textCorrectExplanation: data[currentQuestion].correctExplanation,
                     textSourceUrl: data[currentQuestion].sourceURL,
@@ -34,26 +34,11 @@ function App() {
                 if (isCorrect) setScore(score +1)
                 // add styles question
                 e.target.classList.add(isCorrect ? "correct" : "incorrect");
-
-                // change next question
-                setTimeout(() => {
-
-/*                  
-                  if (currentQuestion === data.length - 1) {
-                //   setIsFinished(true);
-                  } 
-                  else {
-                //    setCurrentQuestion(currentQuestion + 1);
-                  }
-*/                  
-
-                }, 500)
         }
 
 
       function viewAnswers (e){
-          setShowComponent(!showComponent)     
-          
+          setShowComponent(!showComponent)               
       }
 
       function changeQuestion (){
@@ -63,11 +48,23 @@ function App() {
         } 
         else {
           setCurrentQuestion(currentQuestion + 1);
-          setAreDisabled(true);
+          setAreDisabled(true);          
         }
 
         setShowComponent(!showComponent)
+        anim();
       }      
+
+
+      function anim (){
+        let tl_ = gsap.timeline();
+        tl_                
+        .fromTo(".img-dyn img", {autoAlpha: 0}, {duration: 3, scale: 1, autoAlpha: 1, ease: "power3.out"}, 0)
+        .fromTo(".animbtn", {autoAlpha: 0}, {duration: 3, scale: 1, autoAlpha: 1, ease: "power3.out"}, 0)
+
+          return tl_;
+      }
+
 
 
         if (isFinished) return (
@@ -75,38 +72,11 @@ function App() {
             <div className="juego-terminado">
               <span> Score  {score} out of {data.length} {""} </span>
               <button onClick={() => (window.location.href="/")}>{""}Play Again</button>
-
             </div>
 
           </main>
         )
 
-        if (answerShown)
-          return (<main className="app-trivia container">
-            
-              <div className="top-question column">               
-                    
-                    <div className="question-title">
-                      {data[currentQuestion].text}
-                    </div> 
-
-                    <div> 
-                      {data[currentQuestion].choices.filter((opcion) => opcion.isCorrect)[0].textQuestion}
-                    </div>
-                    <button onClick={() => {
-                                if (currentQuestion === data.length - 1) {
-                                  window.location.href = "/";
-                                } 
-                                else {
-                                  setCurrentQuestion(currentQuestion + 1);
-                                }
-                    }}>
-                      {currentQuestion === data.length - 1 ? "Play Again" : "Next"}
-                    </button>
-                  
-              </div>
-
-          </main>)
 
         return (
           <main className="container">  
@@ -131,7 +101,7 @@ function App() {
                     <div className="bottom-question">            
                           {data[currentQuestion].choices.map((data) => (
                             <div className="column col-6 col-12-sm" key={data.textQuestion}>
-                                <div className="btn-answer col-6 col-12-sm" disabled={areDisabled}  onClick={(e) => handleAnswerSubmit(data.isCorrect, e)}>
+                                <div className="btn-answer col-6 col-12-sm animbtn" disabled={areDisabled}  onClick={(e) => handleAnswerSubmit(data.isCorrect, e)}>
                                   {data.textQuestion}
                                 </div>
                             </div>  
